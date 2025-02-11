@@ -1,0 +1,6 @@
+- name: Install required dependencies
+  import_tasks: install.yml
+
+- name: Install and configure Docker Compose
+  import_tasks: compose.yml
+
