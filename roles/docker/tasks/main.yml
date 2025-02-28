@@ -2,4 +2,3 @@
   ansible.builtin.import_tasks: install.yml
 - name: Install and configure Docker Compose
   ansible.builtin.import_tasks: compose.yml
-
