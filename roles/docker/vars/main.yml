@@ -1,2 +1,2 @@
-monitoring_dir: "/opt/monitoring"
+docker_monitoring_dir: "/opt/monitoring"
 
