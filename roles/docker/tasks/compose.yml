@@ -14,6 +14,7 @@
   command: docker-compose version
   register: compose_version
   ignore_errors: yes
+  changed_when: false
 
 - name: Display Docker Compose version
   debug:
@@ -40,10 +41,12 @@
   command: /usr/local/bin/docker-compose up -d
   args:
     chdir: /opt/monitoring
+  changed_when: false
 
 - name: Verify running containers
   command: docker ps
   register: result
+  changed_when: false
 
 - name: Display running containers
   debug:
