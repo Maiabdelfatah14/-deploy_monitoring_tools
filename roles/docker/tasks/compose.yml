@@ -43,4 +43,3 @@
 - name: Display running containers
   ansible.builtin.debug:
     msg: "{{ result.stdout_lines }}"
-
