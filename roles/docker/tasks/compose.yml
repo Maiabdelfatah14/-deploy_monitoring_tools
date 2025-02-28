@@ -1,33 +1,33 @@
 - name: Download Docker Compose
-  get_url:
+  ansible.builtin.get_url:
     url: "https://github.com/docker/compose/releases/latest/download/docker-compose-linux-x86_64"
     dest: "/usr/local/bin/docker-compose"
     mode: '0755'
 
 - name: Create a symlink for Docker Compose
-  file:
+  ansible.builtin.file:
     src: /usr/local/bin/docker-compose
     dest: /usr/bin/docker-compose
     state: link
 
 - name: Verify Docker Compose installation
-  command: docker-compose version
+  ansible.builtin.command: docker-compose version
   register: compose_version
   ignore_errors: yes
   changed_when: false
 
 - name: Display Docker Compose version
-  debug:
+  ansible.builtin.debug:
     msg: "{{ compose_version.stdout_lines }}"
 
 - name: Ensure target directory exists
-  file:
+  ansible.builtin.file:
     path: /opt/monitoring
     state: directory
     mode: '0755'
 
 - name: Copy configuration files
-  copy:
+  ansible.builtin.copy:
     src: "{{ item }}"
     dest: "/opt/monitoring/{{ item | basename }}"
     mode: '0644'
@@ -38,17 +38,17 @@
     - prometheus.yml
 
 - name: Start monitoring stack using Docker Compose
-  command: /usr/local/bin/docker-compose up -d
+  ansible.builtin.command: /usr/local/bin/docker-compose up -d
   args:
     chdir: /opt/monitoring
   changed_when: false
 
 - name: Verify running containers
-  command: docker ps
+  ansible.builtin.command: docker ps
   register: result
   changed_when: false
 
 - name: Display running containers
-  debug:
+  ansible.builtin.debug:
     msg: "{{ result.stdout_lines }}"
 
