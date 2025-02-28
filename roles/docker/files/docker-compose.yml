@@ -3,9 +3,9 @@ services:
     image: mongo
     ports:
       - "27017:27017"
-    #volumes:
-      #- db-data:/data/db
-      #- ./init:/docker-entrypoint-initdb.d
+    # volumes:
+      # - db-data:/data/db
+      # - ./init:/docker-entrypoint-initdb.d
     environment:
       - MONGO_INITDB_ROOT_USERNAME=root
       - MONGO_INITDB_ROOT_PASSWORD=example
@@ -68,7 +68,7 @@ volumes:
     driver: local
   grafana-data:
     driver: local
-  #db-data:
+  # db-data:
 
 networks:
   my-network:
