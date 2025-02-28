@@ -8,4 +8,4 @@ groups:
           severity: critical
         annotations:
           summary: "MongoDB Database Down"
-           description: "MongoDB has been down for more than 1 minute."
+          description: "MongoDB has been down for more than 1 minute."
