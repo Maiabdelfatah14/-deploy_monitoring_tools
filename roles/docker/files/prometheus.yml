@@ -1,5 +1,5 @@
 global:
-  scrape_interval:  10s                    # How frequently to scrape targets
+  scrape_interval: 10s                    # How frequently to scrape targets
   evaluation_interval: 10s                 # Evaluate rules every 10 seconds. The default is every 1 minute.
 # Rules and alerts are read from the specified file(s)
 rule_files:
