@@ -7,7 +7,7 @@ route:
   repeat_interval: 10m
   receiver: 'slack-notifications'
 receivers:
-- name: 'slack-notifications'
+  - name: 'slack-notifications'
   slack_configs:
     - api_url: "PASTE-YOUR-SLACK-WEBHOOK-URL"
       channel: '#CHANNEL-NAME'
