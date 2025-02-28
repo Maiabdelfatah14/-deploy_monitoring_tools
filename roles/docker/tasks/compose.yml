@@ -40,7 +40,7 @@
     src: "{{ item }}"
     dest: "/opt/monitoring/{{ item | basename }}"
     mode: '0644'
-    remote_src: false 
+  remote_src: false 
   loop:
     - alertmanager.yml
     - alert.rules.yml
