@@ -1,5 +1,6 @@
-- name: Deployy monitoring tools
+- name: Deploy monitoring tools 
   hosts: all
   become: true
   roles:
     - docker
+"maiii"
