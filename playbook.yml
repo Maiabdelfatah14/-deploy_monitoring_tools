@@ -1,4 +1,4 @@
-- name: Deploy monitoring tools
+- name: Deployy monitoring tools
   hosts: all
   become: true
   roles:
